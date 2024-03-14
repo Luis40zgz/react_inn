@@ -11,8 +11,12 @@ export default function Calendar(){
         function handlerClick(ev){
             ev.stopPropagation();
             ev.preventDefault();
-            const {day} = ev.target.dataset;
-            console.log(day);
+            /* Recorriendo la lista que recorre el evento para capturar el elemento con el data set esté donde esté */
+            const node = ev.nativeEvent.composedPath().find(n=>n.dataset && 'day' in n.dataset)
+        if(node){
+            const {day } = node.dataset
+            console.log(day)
+        }
         }
 
         const days = [...getDays()]
