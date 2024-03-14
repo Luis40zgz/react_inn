@@ -8,13 +8,16 @@ function* getDays() {
 }
 
 export default function Calendar(){
-        function handlerDay(day){
-            console.log(day)
+        function handlerClick(ev){
+            ev.stopPropagation();
+            ev.preventDefault();
+            const {day} = ev.target.dataset;
+            console.log(day);
         }
 
         const days = [...getDays()]
         
         return(
-            <div className={styles.month}>{days.map(day=><Day key={day} {...{day, handlerDay}}/>)}</div>
+            <div className={styles.month} onClick={handlerClick}>{days.map(day=><Day key={day} {...{day}}/>)}</div>
         )
 }
