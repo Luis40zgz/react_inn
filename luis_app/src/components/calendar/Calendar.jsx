@@ -15,6 +15,6 @@ export default function Calendar(){
         const days = [...getDays()]
         
         return(
-            <div className='month'>{days.map(day=><Day key={day} day={day} handlerDay={handlerDay}/>)}</div>
+            <div className='month'>{days.map(day=><Day key={day} {...{day, handlerDay}}/>)}</div>
         )
 }

@@ -1,7 +1,7 @@
 import './day.css';
 
-export default function Day(props){
-    const {day, handlerDay} = props;
+export default function Day({day, handlerDay}){
+    
     function handlerClick(ev){
         ev.stopPropagation();
         ev.preventDefault();
