@@ -1,0 +1,8 @@
+.day{
+    width: 13%;
+    height: 5vw;
+    text-align: center;
+}
+.day:hover{
+ outline: .25rem solid blue;
+}

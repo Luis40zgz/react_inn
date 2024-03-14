@@ -1,18 +1,20 @@
 import './calendar.css'
+import Day from './day/Day.jsx'
+
+function* getDays() {
+    for(let i = 0; i <31; i++){
+        yield i+1;
+    } 
+}
+
 export default function Calendar(){
-        function handlerClick(ev){
-            ev.stopPropagation()
-            console.log(ev.target.textContent)
+        function handlerDay(day){
+            console.log(day)
         }
 
-        function* monthMaker() {
-            let index = 1;
-            while (index<=31) yield index++; 
-        }
+        const days = [...getDays()]
         
-        const month = monthMaker()
-        const array_days = [...month];
         return(
-            <div className='month' onClick={handlerClick}>{array_days.map(day=><div className="day" key={day}>{day}</div>)}</div>
+            <div className='month'>{days.map(day=><Day key={day} day={day} handlerDay={handlerDay}/>)}</div>
         )
 }
