@@ -1,4 +1,4 @@
-import './calendar.css'
+import styles from './Calendar.module.css'
 import Day from './day/Day.jsx'
 
 function* getDays() {
@@ -15,6 +15,6 @@ export default function Calendar(){
         const days = [...getDays()]
         
         return(
-            <div className='month'>{days.map(day=><Day key={day} {...{day, handlerDay}}/>)}</div>
+            <div className={styles.month}>{days.map(day=><Day key={day} {...{day, handlerDay}}/>)}</div>
         )
 }
