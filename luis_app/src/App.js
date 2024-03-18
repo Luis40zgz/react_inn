@@ -2,6 +2,7 @@ import Header from './components/Header.jsx'
 import Array from './components/array/Array.js';
 import ArrayState from './components/array_state/ArrayState.jsx';
 import Calendar from './components/calendar/Calendar.jsx';
+import Carrito from './components/carrito/Carrito.jsx';
 import Parent from './components/children/Parent.jsx';
 import Counter from './components/counter/Counter.jsx';
 import Timer from './components/timer/Timer.jsx';
@@ -28,8 +29,8 @@ function App() {
   );*/
   return (
     <>
-  <Parent />
   <Fetch />
+  <Carrito />
     </>
   )
 }
